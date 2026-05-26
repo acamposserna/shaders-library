@@ -6,10 +6,13 @@
  * Aplica el color.
  */
 
-// Color
-uniform vec3 color;
+// Color del fragmento
+layout(location = 0) out vec4 FragColor;
+
+// Color de entrada
+uniform vec3 uColor;
 
 void main() {
     // Aplicamos el color al fragmento.
-    gl_FragColor = vec4(color, 1.0);
+    FragColor = vec4(uColor, 1.0);
 }
