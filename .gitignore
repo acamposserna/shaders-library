@@ -44,6 +44,10 @@ build/
 Build/
 build-*/
 
+# glad.c
+include/glad/glad.h
+src/glad.c
+
 # CMake generated files
 CMakeFiles/
 CMakeCache.txt
