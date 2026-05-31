@@ -39,30 +39,3 @@ Para saber más sobre Shaders puedes consultar el fichero [SHADERS.md](SHADERS.m
 |--------|---------|-------------|
 | [Básico](/shaders/basic/BASIC.md) | vertex y fragment | Posiciona cada vertice con su color en coordenadas de clip |
 
-## Flujo completo de renderizado
-
-```
-CPU (C++)
-  │
-  ├─ glUniformMatrix4fv(uModel, ...)
-  ├─ glUniformMatrix4fv(uView, ...)
-  ├─ glUniformMatrix4fv(uProjection, ...)
-  └─ glUniform3f(uColor, r, g, b)
-        │
-        ▼
-   Vertex Shader                     (x N vértices)
-   gl_Position = P * V * M * pos
-        │
-        ▼
-   Rasterización                     (la GPU genera fragmentos)
-        │
-        ▼
-   Fragment Shader                   (x N fragmentos)
-   FragColor = vec4(uColor, 1.0)
-        │
-        ▼
-   Framebuffer → Pantalla
-```
-
----
-
